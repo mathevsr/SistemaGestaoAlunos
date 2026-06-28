@@ -37,8 +37,9 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SistemaGestaoAlunos.Domain\SistemaGestaoAlunos.Domain.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\SistemaGestaoAlunos.Domain\SistemaGestaoAlunos.Domain.csproj" />
+		<ProjectReference Include="..\SistemaGestaoAlunos.Application\SistemaGestaoAlunos.Application.csproj" />
+	</ItemGroup>
 
 </Project>

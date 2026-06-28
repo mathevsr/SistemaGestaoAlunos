@@ -13,6 +13,8 @@ namespace SistemaGestaoAlunos.Infrastructure.Data
 
         public DbSet<Aluno> Alunos { get; set; }
 
+        public DbSet<Usuario> Usuarios { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 
         {
@@ -29,6 +31,28 @@ namespace SistemaGestaoAlunos.Infrastructure.Data
                       .HasPrecision(6, 2);
             });
 
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(u => u.Id);
+
+                entity.Property(u => u.Nome)
+                      .HasMaxLength(100)
+                      .IsRequired();
+
+                entity.Property(u => u.Email)
+                      .HasMaxLength(150)
+                      .IsRequired();
+
+                entity.HasIndex(u => u.Email)
+                      .IsUnique();
+
+                entity.Property(u => u.SenhaHash)
+                      .IsRequired();
+
+                entity.Property(u => u.Role)
+                      .HasMaxLength(30)
+                      .IsRequired();
+            });
 
         }
     }
