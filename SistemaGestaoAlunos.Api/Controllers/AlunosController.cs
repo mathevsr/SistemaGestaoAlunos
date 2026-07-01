@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using SistemaGestaoAlunos.Application.DTOs.Aluno;
 using SistemaGestaoAlunos.Application.Services.Alunos;
 
@@ -9,6 +11,7 @@ namespace SistemaGestaoAlunos.Api.Controllers
 
     // Define a rota base: api/alunos
     [Route("api/[controller]")]
+    [Authorize] // Requer autenticação para acessar os endpoints
     public class AlunosController : ControllerBase
     {
         // Interface do serviço de alunos (injeção de dependência)

@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using SistemaGestaoAlunos.Application.Interfaces;
+using SistemaGestaoAlunos.Application.Services.Interfaces;
 using SistemaGestaoAlunos.Domain.Entities;
+using SistemaGestaoAlunos.Domain.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

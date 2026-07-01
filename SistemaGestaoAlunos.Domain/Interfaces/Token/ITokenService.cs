@@ -1,6 +1,6 @@
 ﻿using SistemaGestaoAlunos.Domain.Entities;
 
-namespace SistemaGestaoAlunos.Application.Interfaces;
+namespace SistemaGestaoAlunos.Application.Services.Interfaces;
 
 public interface ITokenService
 {

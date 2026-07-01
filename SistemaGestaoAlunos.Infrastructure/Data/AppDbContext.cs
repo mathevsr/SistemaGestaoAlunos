@@ -54,6 +54,12 @@ namespace SistemaGestaoAlunos.Infrastructure.Data
                       .IsRequired();
             });
 
+
         }
+
+
+
     }
+
+
 }
