@@ -17,13 +17,13 @@ public class AlunoService : IAlunoService
     public async Task<AlunoResponseDto> CriarAsync(CreateAlunoDto dto)
     {
         if (string.IsNullOrWhiteSpace(dto.Nome))
-            throw new ArgumentException("Nome é obrigatório.");
+            throw new ArgumentException("O Nome é obrigatório.");
         if (dto.Nome.Length < 3)
-            throw new ArgumentException("Nome deve ter no mínimo 3 caracteres.");
+            throw new ArgumentException("O Nome deve ter no mínimo 3 caracteres.");
         if (dto.Altura <= 0)
-            throw new ArgumentException("Altura deve ser maior que zero.");
+            throw new ArgumentException("A Altura deve ser maior que zero.");
         if (dto.Peso <= 0)
-            throw new ArgumentException("Peso deve ser maior que zero.");
+            throw new ArgumentException("O Peso deve ser maior que zero.");
 
         var aluno = new Aluno(dto.Nome, dto.DataNascimento, dto.Altura, dto.Peso);
         await _alunoRepository.AdicionarAsync(aluno);
@@ -44,13 +44,13 @@ public class AlunoService : IAlunoService
         if (aluno == null) return false;
 
         if (string.IsNullOrWhiteSpace(dto.Nome))
-            throw new ArgumentException("Nome é obrigatório.");
+            throw new ArgumentException("O Nome é obrigatório.");
         if (dto.Nome.Length < 3)
-            throw new ArgumentException("Nome deve ter no mínimo 3 caracteres.");
+            throw new ArgumentException("O Nome deve ter no mínimo 3 caracteres.");
         if (dto.Altura <= 0)
-            throw new ArgumentException("Altura deve ser maior que zero.");
+            throw new ArgumentException("A Altura deve ser maior que zero.");
         if (dto.Peso <= 0)
-            throw new ArgumentException("Peso deve ser maior que zero.");
+            throw new ArgumentException("O Peso deve ser maior que zero.");
 
         aluno.AtualizarDados(dto.Nome, dto.DataNascimento, dto.Altura, dto.Peso);
         await _alunoRepository.SalvarAsync();
